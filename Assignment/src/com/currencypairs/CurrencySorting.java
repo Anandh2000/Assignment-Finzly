@@ -15,7 +15,6 @@ public class CurrencySorting { //this class sorts data based on currency pair
 		for(CurrencyPair dd : currencydata) {
 			System.out.println(dd);
 		}
-
 	}
 
 }

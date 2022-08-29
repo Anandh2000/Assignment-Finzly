@@ -23,7 +23,7 @@ public class CsvFileReader {
 	}
 
 	public static void main(String[] args) throws IOException {
-		//this will search the currencypair and retrieve the data based on that
+		//this will search the currency pair and retrieve the data based on that
 		CsvFileReader cc = new CsvFileReader();
 		ArrayList<CurrencyPair> values = cc.csvFilereader();
 		Scanner sc = new Scanner(System.in);
