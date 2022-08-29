@@ -54,7 +54,7 @@ public class CurrencyPair {
 		return LastUpdatedTime;
 	}
 	
-	public void sortByCurrency(ArrayList<CurrencyPair> ab){  //method to sort based on currencypairs
+	public void sortByCurrency(ArrayList<CurrencyPair> ab){  //method to sort based on currency pairs
 		ab.sort((CurrencyPair d1,CurrencyPair d2) -> ((d1.getCcy1()+d1.getCcy2()).compareTo(d2.getCcy1()+d2.getCcy2())));
 	}
 	public void sortByLastUpdatedTime(ArrayList<CurrencyPair> ab){  //method to sort based on last
