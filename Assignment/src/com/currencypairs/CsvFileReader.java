@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class CsvFileReader {
 	public ArrayList<CurrencyPair> csvFilereader() throws IOException {
-		String path = "C:\\Users\\Finzly\\csv\\CurrencyPairs.csv";
+		String path = "C:\\Users\\shanthosh anandh\\csv\\CurrencyPairs.csv";
 		String l ;
 		String[] line;
 		ArrayList<CurrencyPair> currencydata = new ArrayList<>();
@@ -31,7 +31,7 @@ public class CsvFileReader {
 		String currency = sc.next();
 		String match = "false";    //variable to make sure whether the file contains the currency pair
 		for (CurrencyPair ok : values) {
-			if(currency.equals(ok.getCcy1()+ok.getCcy2())) {
+			if(currency.equalsIgnoreCase(ok.getCcy1()+ok.getCcy2())) {
 				match = "true";
 				System.out.println(ok); //displays the required currency pair values
 			}
