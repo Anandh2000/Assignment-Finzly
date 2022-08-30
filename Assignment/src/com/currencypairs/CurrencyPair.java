@@ -11,7 +11,7 @@ public class CurrencyPair {
 	private String WeekendDays;
 	private String Precision;
 	private String LastUpdatedTime;
-	private LocalTime lt;
+	private LocalTime lt;              //Localtime variable to store time
 	
 	
 	public CurrencyPair(String ccy1, String ccy2, String spotdays, String weekendDays, String precision,
@@ -23,7 +23,7 @@ public class CurrencyPair {
 		WeekendDays = weekendDays;
 		Precision = precision;
 		LastUpdatedTime = lastUpdatedTime;
-		this.lt = LocalTime.parse(lastUpdatedTime.replaceAll("-", ":"));
+		this.lt = LocalTime.parse(lastUpdatedTime.replaceAll("-", ":"));        //string type time is stored in localtime
 		
 	}
 	
@@ -65,7 +65,7 @@ public class CurrencyPair {
 	public void sortByCurrency(ArrayList<CurrencyPair> ab){  //method to sort based on currency pairs
 		ab.sort((CurrencyPair d1,CurrencyPair d2) -> ((d1.getCcy1()+d1.getCcy2()).compareTo(d2.getCcy1()+d2.getCcy2())));
 	}
-	public void sortByLastUpdatedTime(ArrayList<CurrencyPair> ab){  //method to sort based on last
+	public void sortByLastUpdatedTime(ArrayList<CurrencyPair> ab){  //method to sort based on localupdatedtime
 		ab.sort((CurrencyPair d1,CurrencyPair d2) -> (d1.getLt().compareTo(d2.getLt())));
 	}
 }
