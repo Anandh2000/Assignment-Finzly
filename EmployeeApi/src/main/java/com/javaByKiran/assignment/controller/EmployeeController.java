@@ -2,6 +2,7 @@ package com.javaByKiran.assignment.controller;
 
 import java.util.List;
 
+import com.javaByKiran.assignment.entity.Country;
 import com.javaByKiran.assignment.entity.Employee;
 import com.javaByKiran.assignment.service.EmployeeDaoService;
 
@@ -25,6 +26,7 @@ public class EmployeeController {
 	
 	@PostMapping("AddEmployee")
 	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+	System.out.println(employee.toString());
 		return service.saveEmployee(employee);
 	}
 	
@@ -35,16 +37,37 @@ public class EmployeeController {
 	
 	@PostMapping("DeleteEmployee/{id}")
 	public void deleteEmployee(@PathVariable int id) {
-		service.deleteEmployee(id);;
+		service.deleteEmployee(id);
 	}
 	
-	@PostMapping("UpdateEmployee/{id}/{first}")
-	public void update(@PathVariable int id,@PathVariable String first,@RequestBody String second) {
-		String query = "UPDATE Employee SET "+first+" = "+second+"WHERE empId= "+id;
-		 service.updateEmp(query);
-		
+//	@PostMapping("UpdateEmployee/{id}/{first}")
+//	public void update(@PathVariable int id,@PathVariable String first,@RequestBody String second) {
+//		String query = "UPDATE Employee SET "+first+" = "+second+"WHERE empId= "+id;
+//		 service.updateEmp(query);
+//		
+//	}
+	
+	@PostMapping("AddCountry")
+	public ResponseEntity<Country> addCountry(@RequestBody Country country) {
+		return service.saveCountry(country);
+	}
+	
+	@PostMapping("DeleteCountry/{id}")
+	public void deleteCountry(@PathVariable int id) {
+		service.deleteCountry(id);
+	}
+	
+	@GetMapping("GetCountry")
+	public ResponseEntity<List<Country>> getCountry() {
+		return service.printAllCountries();
+	}
+	
+	@GetMapping("GetCou")
+	public Country getCou() {
+		return new Country();
 	}
 
+	
 	
 	
 

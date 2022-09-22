@@ -13,10 +13,6 @@ import org.springframework.stereotype.Repository;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	
-	@Modifying
-	@Transactional
-	
-	@Query(":query")
-	void updateEmployee(@Param("query")String query);
+
 
 }

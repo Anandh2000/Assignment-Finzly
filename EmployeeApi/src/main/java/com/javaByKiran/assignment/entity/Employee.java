@@ -5,12 +5,15 @@ import java.time.LocalDate;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Employee {
 	@Id
+	@GeneratedValue
 	private int empId;
 	private String empName;
 	private String empEmailId;
@@ -20,7 +23,8 @@ public class Employee {
 	private String createdBy;
 	private LocalDate updatedDate;
 	private String updatedBy;
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "employee")
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name = "emp_Id")
 	private Country country;
 	
 	public Employee() {

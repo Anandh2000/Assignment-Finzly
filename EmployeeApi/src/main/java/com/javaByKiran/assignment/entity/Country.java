@@ -2,6 +2,7 @@ package com.javaByKiran.assignment.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -9,13 +10,13 @@ import javax.persistence.OneToOne;
 @Entity
 public class Country {
 	@Id
+	@GeneratedValue
 	private int empId;
 	private String countryId;
 	private String countryName;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "emp_id")
-	private Employee employee;
+
+	
 	
 	
 	public Country() {
